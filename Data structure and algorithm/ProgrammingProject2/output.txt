@@ -1,0 +1,72 @@
+****White spaces between characters are automatically removed before the expression being processed.
+****An expression contains characters other than digit and + - * / ( ) will be treated as an invalid expression.
+****An invalid expression will not be processed
+Please enter the expression: 
+BNF <expression> evaluating: ((5+3)*2)/4
+	==>	<term>: ((5+3)*2)/4
+
+BNF <term> evaluating: ((5+3)*2)/4
+	==>	<factor> / <term>,  <factor> :((5+3)*2)	<term>: 4
+
+BNF <term> evaluating: 4
+	==>	<factor>: 4
+
+BNF <factor> evaluating: 4
+	==>	<literal>: 4
+
+BNF <literal> evaluating: 4
+	Success: 4
+
+BNF <factor> evaluating: ((5+3)*2)
+	==>	(<expression>): (5+3)*2
+
+BNF <expression> evaluating: (5+3)*2
+	==>	<term>: (5+3)*2
+
+BNF <term> evaluating: (5+3)*2
+	==>	<factor> * <term>,  <factor> :(5+3)	<term>: 2
+
+BNF <term> evaluating: 2
+	==>	<factor>: 2
+
+BNF <factor> evaluating: 2
+	==>	<literal>: 2
+
+BNF <literal> evaluating: 2
+	Success: 2
+
+BNF <factor> evaluating: (5+3)
+	==>	(<expression>): 5+3
+
+BNF <expression> evaluating: 5+3
+	==>	<term> + <expression>,  <term> :5	<expression>: 3
+
+BNF <expression> evaluating: 3
+	==>	<term>: 3
+
+BNF <term> evaluating: 3
+	==>	<factor>: 3
+
+BNF <factor> evaluating: 3
+	==>	<literal>: 3
+
+BNF <literal> evaluating: 3
+	Success: 3
+
+BNF <term> evaluating: 5
+	==>	<factor>: 5
+
+BNF <factor> evaluating: 5
+	==>	<literal>: 5
+
+BNF <literal> evaluating: 5
+	Success: 5
+
+===============================Output starts below:=======================================
+Original expression: ((5+3)*2)/4
+Expression has been process successfully.
+Print out the original expression by Inorder traversal: 
+ 5 + 3 * 2 / 4
+Print preorder: 
+ / * + 5 3 2 4
+Expression output (in integer): 	4
