@@ -18,3 +18,5 @@ Discovered issue:
 Text Dataset:
 	- Trec dataset(Ad_hoc Test collection). https://trec.nist.gov/data.html
 	- textDoc folder only contains 2 sample files because the entire dataset is too big
+
+Test...
